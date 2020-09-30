@@ -47,9 +47,21 @@ public class InfoActivity extends AppCompatActivity {
         }
     }
 
-
-
     // ***
     // TODO - Task 3 - Launch the Phone Activity
     // ***
+    public void createPhoneIntent(View view){
+
+        //Create an Intent to handle phone dial
+        Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+
+        //Create URI for telephone number
+        Uri telUri = Uri.parse("tel:0123456789");
+
+        //pass data to the intent object using setData() method
+        dialIntent.setData(telUri);
+
+        startActivity(dialIntent);
+    }
+
 }
